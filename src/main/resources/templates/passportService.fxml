@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="action_pane" blendMode="SRC_OVER"
+            disable="false" minHeight="264.0" minWidth="411.20709228515625"
+            prefHeight="264.0" prefWidth="411.20709228515625"
+            xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2"
+            fx:controller="main.java.application.controller.PassportServiceController">
+  <children>
+    <Text fontSmoothingType="GRAY" strikethrough="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Паспортный стол" underline="false" AnchorPane.bottomAnchor="248.19" AnchorPane.leftAnchor="125.92" AnchorPane.rightAnchor="126.29" AnchorPane.topAnchor="18.81">
+      <font>
+        <Font name="Bookshelf Symbol 7" size="20.0" />
+      </font>
+    </Text>
+    <Text smooth="true" strikethrough="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Выберете услугу:" AnchorPane.bottomAnchor="200.47" AnchorPane.leftAnchor="133.0" AnchorPane.rightAnchor="133.8" AnchorPane.topAnchor="68.53">
+      <font>
+        <Font name="Bookshelf Symbol 7" size="18.0" />
+      </font>
+    </Text>
+    <Line endX="161.0" endY="-12.0" startX="-248.0" startY="-10.0" AnchorPane.bottomAnchor="236.29" AnchorPane.leftAnchor="0.29" AnchorPane.rightAnchor="0.5" AnchorPane.topAnchor="46.71" />
+    <Button id="" fx:id="btnRegistrationPassport" layoutY="120.0" mnemonicParsing="false" onAction="#openPassportApplication" prefHeight="27.0" prefWidth="175.0" text="Оформить паспорт" AnchorPane.leftAnchor="118.0" AnchorPane.rightAnchor="118.21">
+      <font>
+        <Font name="Bookshelf Symbol 7" size="16.0" fx:id="x1" />
+      </font>
+    </Button>
+    <Button id="" fx:id="btnRegistrationResidence" font="$x1" layoutY="168.0" mnemonicParsing="false" onAction="#openResidenceApplication"  prefHeight="29.0" prefWidth="184.0" text="Оформить прописку" AnchorPane.leftAnchor="114.0" AnchorPane.rightAnchor="113.21" />
+  </children>
+</AnchorPane>

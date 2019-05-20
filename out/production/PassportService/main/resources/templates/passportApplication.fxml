@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minWidth="526.0" prefHeight="352.28125"
+            prefWidth="526.0" xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/2.2" fx:controller="main.java.application.controller.PassportApplicationController">
+  <children>
+    <Text layoutX="177.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Заявление на паспорт">
+      <font>
+        <Font name="Bradley Hand ITC" size="20.0" />
+      </font>
+    </Text>
+    <Line endX="225.0" endY="-149.0" layoutX="300.0" layoutY="200.0" startX="-298.0" startY="-147.0" />
+    <Text layoutX="77.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ФИО">
+      <font>
+        <Font name="Bradley Hand ITC" size="16.0" fx:id="x1" />
+      </font>
+    </Text>
+    <Text font="$x1" layoutX="77.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Дата рождения" />
+    <Text font="$x1" layoutX="81.0" layoutY="197.0" scaleX="1.198785319727423" scaleY="1.0000076293945312" strokeType="OUTSIDE" strokeWidth="0.0" text="Пол" />
+    <TextField fx:id="FIO" layoutX="199.0" layoutY="88.0" prefWidth="298.0" />
+    <TextField fx:id="dateOfBirth" layoutX="199.0" layoutY="134.0" prefWidth="200.0" />
+    <ComboBox fx:id="gender" layoutX="199.0" layoutY="182.0" prefHeight="21.0" prefWidth="124.0" promptText="" visibleRowCount="2">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Item 1" />
+          <String fx:value="Item 2" />
+          <String fx:value="Item 3" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <Text font="$x1" layoutX="77.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Вид паспорта" />
+    <ComboBox id="typeOf" fx:id="typeOfpassport" layoutX="199.0" layoutY="227.0" prefHeight="21.0" prefWidth="175.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Item 1" />
+          <String fx:value="Item 2" />
+          <String fx:value="Item 3" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <Button fx:id="send" layoutX="403.0" layoutY="299.0" mnemonicParsing="false" text="Отправить">
+      <font>
+        <Font size="16.0" fx:id="x2" />
+      </font>
+    </Button>
+    <Button fx:id="cancel" font="$x2" layoutX="287.0" layoutY="299.0" mnemonicParsing="false" text="Отмена" />
+  </children>
+</AnchorPane>
