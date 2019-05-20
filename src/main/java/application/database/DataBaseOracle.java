@@ -1,8 +1,9 @@
-package main.java.application.database;
+package application.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Locale;
 
 public class DataBaseOracle {
 
@@ -13,18 +14,20 @@ public class DataBaseOracle {
         String url = "jdbc:oracle:thin:@localhost:1521:xe";
 
         try {
-            Class.forName("oracle.jdbc.OracleDriver");
+            Class.forName("oracle.jdbc.driver.OracleDriver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
-        try {            connection = DriverManager.getConnection(url, "system", "system");
+        try {
+            Locale.setDefault(Locale.ENGLISH);
+            connection = DriverManager.getConnection(url, "system", "system");
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         if (connection != null) {
-            System.out.println("You made it, take control your database now!");
+            System.out.println("Success connection!");
         } else {
             System.out.println("Failed to make connection!");
         }

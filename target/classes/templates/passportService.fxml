@@ -9,7 +9,7 @@
             disable="false" minHeight="264.0" minWidth="411.20709228515625"
             prefHeight="264.0" prefWidth="411.20709228515625"
             xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2"
-            fx:controller="main.java.application.controller.PassportServiceController">
+            fx:controller="application.controller.PassportServiceController">
   <children>
     <Text fontSmoothingType="GRAY" strikethrough="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Паспортный стол" underline="false" AnchorPane.bottomAnchor="248.19" AnchorPane.leftAnchor="125.92" AnchorPane.rightAnchor="126.29" AnchorPane.topAnchor="18.81">
       <font>
