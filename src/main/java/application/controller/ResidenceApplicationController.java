@@ -1,4 +1,4 @@
-package main.java.application.controller;
+package application.controller;
 
 public class ResidenceApplicationController {
 }

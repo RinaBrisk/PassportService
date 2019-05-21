@@ -1,4 +1,4 @@
-package main.java.application.controller;
+package application.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;

@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import application.database.DataBaseOracle;
+import application.database.MySQLDataBase;
 import java.util.Objects;
 
 public class Main extends Application {
@@ -15,9 +15,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage){
 
-        DataBaseOracle dataBaseOracle = new DataBaseOracle();
-        dataBaseOracle.getConnection();
-
+        MySQLDataBase.getConnection();
         try {
             this.primaryStage = primaryStage;
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("templates/passportService.fxml")));
@@ -27,6 +25,7 @@ public class Main extends Application {
         }catch (Exception e){
             e.printStackTrace();
         }
+        MySQLDataBase.breakConnection();
     }
 
     public static void main(String[] args) {

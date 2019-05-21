@@ -1,1 +1,4 @@
 .idea
+src/main/resources/MySqlConnection.txt
+ target/classes/MySqlConnection.txt
+ target/.
