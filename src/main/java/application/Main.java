@@ -12,8 +12,12 @@ public class Main extends Application {
 
     private Stage primaryStage;
 
+    public Stage getPrimaryStage(){
+        return primaryStage;
+    }
+
     @Override
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) {
 
         MySQLDataBase.getConnection();
         try {
@@ -22,17 +26,19 @@ public class Main extends Application {
             primaryStage.setTitle("Паспортный стол");
             primaryStage.setScene(new Scene(root, 410, 300));
             primaryStage.show();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void stop() throws Exception {
         MySQLDataBase.breakConnection();
+        super.stop();
     }
 
     public static void main(String[] args) {
         launch(args);
     }
 
-    public Stage getPrimaryStage(){
-        return primaryStage;
-    }
 }

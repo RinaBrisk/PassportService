@@ -1,5 +1,8 @@
 package application.utils;
 
+import javafx.geometry.Pos;
+import javafx.scene.image.ImageView;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -18,7 +21,6 @@ public class Helper {
         mySqlConnection = readFromFile(RES_PATH + "MySqlConnection.txt");
         return mySqlConnection.get(i);
     }
-
 
     private static List<String> readFromFile(String fileName) {
         List<String> lines = new ArrayList<>();

@@ -1,3 +1,3 @@
-package main.java.application.DTO;
+package application.DTO;
 
-enum TypeOfPassport {domestic, foreign}
+public enum TypeOfPassport {domestic, foreign}

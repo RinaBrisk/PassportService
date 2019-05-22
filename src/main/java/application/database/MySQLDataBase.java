@@ -34,28 +34,5 @@ public class MySQLDataBase {
             e.printStackTrace();
         }
     }
-
-
-//    public void getOracleConnection() {
-//        String url = "jdbc:oracle:thin:@localhost:1521:xe";
-//
-//        try {
-//            Class.forName("oracle.jdbc.driver.OracleDriver");
-//        } catch (ClassNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//
-//        try {
-//            Locale.setDefault(Locale.ENGLISH);
-//            connection = DriverManager.getConnection(url, "system", "system");
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//
-//        if (connection != null) {
-//            System.out.println("Success connection!");
-//        } else {
-//            System.out.println("Failed to make connection!");
-//        }
- //   }
+    
 }

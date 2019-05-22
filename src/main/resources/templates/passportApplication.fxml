@@ -9,49 +9,45 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane minWidth="526.0" prefHeight="352.28125"
-            prefWidth="526.0" xmlns:fx="http://javafx.com/fxml/1"
-            xmlns="http://javafx.com/javafx/2.2" fx:controller="main.java.application.controller.PassportApplicationController">
+<AnchorPane id="anchorPane" minWidth="526.0" prefHeight="352.28125" prefWidth="526.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.PassportApplicationController">
   <children>
-    <Text layoutX="177.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Заявление на паспорт">
+    <Text layoutX="148.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Заявление на паспорт">
       <font>
-        <Font name="Bradley Hand ITC" size="20.0" />
+        <Font name="Arial Bold Italic" size="20.0" />
       </font>
     </Text>
     <Line endX="225.0" endY="-149.0" layoutX="300.0" layoutY="200.0" startX="-298.0" startY="-147.0" />
-    <Text layoutX="77.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ФИО">
+    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ФИО" AnchorPane.bottomAnchor="244.37" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="441.55" AnchorPane.topAnchor="88.91">
       <font>
-        <Font name="Bradley Hand ITC" size="16.0" fx:id="x1" />
+        <Font name="Arial Bold Italic" size="16.0" fx:id="x1" />
       </font>
     </Text>
-    <Text font="$x1" layoutX="77.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Дата рождения" />
-    <Text font="$x1" layoutX="81.0" layoutY="197.0" scaleX="1.198785319727423" scaleY="1.0000076293945312" strokeType="OUTSIDE" strokeWidth="0.0" text="Пол" />
-    <TextField fx:id="FIO" layoutX="199.0" layoutY="88.0" prefWidth="298.0" />
-    <TextField fx:id="dateOfBirth" layoutX="199.0" layoutY="134.0" prefWidth="200.0" />
-    <ComboBox fx:id="gender" layoutX="199.0" layoutY="182.0" prefHeight="21.0" prefWidth="124.0" promptText="" visibleRowCount="2">
+    <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="ДАТА РОЖДЕНИЯ" AnchorPane.bottomAnchor="198.36" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="334.21" AnchorPane.topAnchor="135.52" />
+    <Text font="$x1" scaleX="1.198785319727423" scaleY="1.0000076293945312" strokeType="OUTSIDE" strokeWidth="0.0" text="ПОЛ" AnchorPane.bottomAnchor="151.36" AnchorPane.leftAnchor="52.0" AnchorPane.rightAnchor="439.05" AnchorPane.topAnchor="182.52" />
+    <TextField fx:id="FIO" prefWidth="298.0" AnchorPane.bottomAnchor="242.28" AnchorPane.leftAnchor="199.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="88.0" />
+    <DatePicker fx:id="dateOfBirth" prefWidth="200.0" AnchorPane.bottomAnchor="196.28" AnchorPane.leftAnchor="199.0" AnchorPane.rightAnchor="127.0" AnchorPane.topAnchor="134.0" />
+    <ComboBox fx:id="gender" cache="true" cacheHint="DEFAULT" depthTest="INHERIT" editable="false" opacity="1.0" prefHeight="21.0" prefWidth="175.0" promptText="не выбран" visibleRowCount="2" AnchorPane.bottomAnchor="149.28" AnchorPane.leftAnchor="199.0" AnchorPane.rightAnchor="152.0" AnchorPane.topAnchor="182.0">
       <items>
         <FXCollections fx:factory="observableArrayList">
-          <String fx:value="Item 1" />
-          <String fx:value="Item 2" />
-          <String fx:value="Item 3" />
+          <String fx:value="мужской" />
+          <String fx:value="женский" />
         </FXCollections>
       </items>
     </ComboBox>
-    <Text font="$x1" layoutX="77.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Вид паспорта" />
-    <ComboBox id="typeOf" fx:id="typeOfpassport" layoutX="199.0" layoutY="227.0" prefHeight="21.0" prefWidth="175.0">
+    <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="ВИД ПАСПОРТА" AnchorPane.bottomAnchor="106.36" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="348.37" AnchorPane.topAnchor="227.52" />
+    <ComboBox id="typeOf" fx:id="typeOfPassport" editable="false" prefHeight="21.0" prefWidth="175.0" promptText="не выбран" AnchorPane.bottomAnchor="104.28" AnchorPane.leftAnchor="199.0" AnchorPane.rightAnchor="152.0" AnchorPane.topAnchor="227.0">
       <items>
         <FXCollections fx:factory="observableArrayList">
-          <String fx:value="Item 1" />
-          <String fx:value="Item 2" />
-          <String fx:value="Item 3" />
+          <String fx:value="внутренний" />
+          <String fx:value="заграничный" />
         </FXCollections>
       </items>
     </ComboBox>
-    <Button fx:id="send" layoutX="403.0" layoutY="299.0" mnemonicParsing="false" text="Отправить">
+    <Button fx:id="send" mnemonicParsing="false" onAction="#parseCivilianData" text="Отправить" AnchorPane.bottomAnchor="24.28" AnchorPane.leftAnchor="403.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="299.0">
       <font>
         <Font size="16.0" fx:id="x2" />
       </font>
     </Button>
-    <Button fx:id="cancel" font="$x2" layoutX="287.0" layoutY="299.0" mnemonicParsing="false" text="Отмена" />
+    <Button fx:id="cancel" font="$x2" mnemonicParsing="false" onAction="#closeStage" text="Отмена" AnchorPane.bottomAnchor="24.28" AnchorPane.leftAnchor="287.0" AnchorPane.rightAnchor="157.0" AnchorPane.topAnchor="299.0" />
   </children>
 </AnchorPane>
