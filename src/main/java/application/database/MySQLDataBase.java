@@ -1,5 +1,9 @@
 package application.database;
+
+import application.DTO.Civilian;
+import application.DTO.PassportApplication;
 import application.utils.Helper;
+
 import java.sql.*;
 
 public class MySQLDataBase {
@@ -34,5 +38,25 @@ public class MySQLDataBase {
             e.printStackTrace();
         }
     }
-    
+
+    public static void insertDataInCivilian(Civilian civilian) {
+        String querySelect = "SELECT * FROM passportService.civilian WHERE FIO LIKE '" + civilian.getFIO() + "%';";
+        try {
+            statement.executeQuery(querySelect);
+            resultSet = statement.getResultSet();
+            if (!resultSet.next()) {
+                String queryInsert = "INSERT INTO passportService.civilian (FIO, date_of_birth, gender) \n" +
+                        " VALUES ('" + civilian.getFIO() + "', '" + civilian.getDateOfBirth() + "', '" + civilian.getGender() + "')";
+                statement.executeUpdate(queryInsert);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void insertDataInPassportApplication(PassportApplication passportApplication) {
+        //add new civilian
+
+    }
+
 }

@@ -4,6 +4,7 @@ import application.DTO.Civilian;
 import application.DTO.Gender;
 import application.DTO.PassportApplication;
 import application.DTO.TypeOfPassport;
+import application.database.MySQLDataBase;
 import application.utils.NotificationType;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -70,6 +71,8 @@ public class PassportApplicationController extends PassportServiceController{
         passportApplication = new PassportApplication(civilian, typeOfPassportLocal);
 
         notificate("Заявление успешно отправлено!", NotificationType.SUCCESS);
+
+        MySQLDataBase.insertDataInCivilian(civilian);
 
         System.out.println(civilian.getFIO());
         System.out.println(civilian.getDateOfBirth());
