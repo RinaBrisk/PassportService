@@ -41,12 +41,12 @@
         </FXCollections>
       </items>
     </ComboBox>
-    <Button fx:id="cancel" layoutY="497.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="104.0" text="Отмена" AnchorPane.leftAnchor="303.3" AnchorPane.rightAnchor="185.7">
+    <Button fx:id="cancel" layoutY="497.0" mnemonicParsing="false" onAction="#closeStage" prefHeight="33.0" prefWidth="104.0" text="Отмена" AnchorPane.leftAnchor="303.3" AnchorPane.rightAnchor="185.7">
       <font>
         <Font size="16.0" fx:id="x2" />
       </font>
     </Button>
-    <Button id="btnRegistrationResidence" fx:id="send" font="$x2" layoutY="497.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="103.599609375" text="Отправить" AnchorPane.leftAnchor="440.3" AnchorPane.rightAnchor="48.7" />
+    <Button id="btnRegistrationResidence" fx:id="send" font="$x2" layoutY="497.0" mnemonicParsing="false" onAction="#parseResidenceApplicationData" prefHeight="33.0" prefWidth="103.599609375" text="Отправить" AnchorPane.leftAnchor="440.3" AnchorPane.rightAnchor="48.7" />
     <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="ТИП ПРОПИСКИ" AnchorPane.bottomAnchor="114.08" AnchorPane.leftAnchor="52.3" AnchorPane.rightAnchor="412.93" AnchorPane.topAnchor="427.52" />
   </children>
 </AnchorPane>

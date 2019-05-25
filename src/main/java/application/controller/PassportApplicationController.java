@@ -1,17 +1,11 @@
 package application.controller;
 
-import application.DTO.Civilian;
-import application.DTO.Gender;
-import application.DTO.PassportApplication;
-import application.DTO.TypeOfPassport;
+import application.DTO.*;
 import application.database.MySQLDataBase;
 import application.utils.NotificationType;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
+import javafx.scene.control.*;
 import javafx.event.ActionEvent;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class PassportApplicationController extends PassportServiceController{
@@ -32,6 +26,9 @@ public class PassportApplicationController extends PassportServiceController{
 
     @FXML
     private Button cancel;
+
+    @FXML
+    private CheckBox payment;
 
     public void parsePassportApplicationData(ActionEvent event){
         Civilian civilian = new Civilian();
@@ -68,6 +65,11 @@ public class PassportApplicationController extends PassportServiceController{
             typeOfPassportLocal = TypeOfPassport.foreign;
         }
 
+        if (!payment.isSelected()) {
+            notificate("Нужно оплатить госпошлину!", NotificationType.ERROR);
+            return;
+        }
+
         passportApplication = new PassportApplication(civilian, typeOfPassportLocal);
 
         notificate("Заявление успешно отправлено!", NotificationType.SUCCESS);
@@ -79,6 +81,16 @@ public class PassportApplicationController extends PassportServiceController{
         System.out.println(civilian.getDateOfBirth());
         System.out.println(civilian.getGender());
         System.out.println(typeOfPassportLocal);
+    }
+
+    public void selectDutyAmount(){
+        if(typeOfPassport.getValue().equals("внутренний")){
+            payment.setText("ОПЛАТИТЬ ГОСПОШЛИНУ В РАЗМЕРЕ " + AmountOfDuty.domesticDuty.getAmount() + " РУБ");
+
+        }else if(typeOfPassport.getValue().equals("заграничный")){
+            payment.setText("ОПЛАТИТЬ ГОСПОШЛИНУ В РАЗМЕРЕ " + AmountOfDuty.foreignDuty.getAmount() + " РУБ");
+        }
+        payment.setVisible(true);
     }
 
     public void closeStage(ActionEvent event){

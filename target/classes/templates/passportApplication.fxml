@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="anchorPane" minWidth="524.4141845703125" prefHeight="352.28125" prefWidth="558.4141845703125" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.PassportApplicationController">
+<AnchorPane id="anchorPane" minWidth="524.4141845703125" prefHeight="382.28125" prefWidth="558.4141845703125" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.PassportApplicationController">
   <children>
     <Text layoutX="164.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Заявление на паспорт">
       <font>
@@ -24,9 +24,9 @@
     </Text>
     <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="ДАТА РОЖДЕНИЯ" AnchorPane.bottomAnchor="198.36" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="334.21" AnchorPane.topAnchor="135.52" />
     <Text font="$x1" scaleX="1.198785319727423" scaleY="1.0000076293945312" strokeType="OUTSIDE" strokeWidth="0.0" text="ПОЛ" AnchorPane.bottomAnchor="151.36" AnchorPane.leftAnchor="52.0" AnchorPane.rightAnchor="439.05" AnchorPane.topAnchor="182.52" />
-    <TextField fx:id="FIO" prefWidth="298.0" AnchorPane.bottomAnchor="241.37" AnchorPane.leftAnchor="209.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="88.91" />
-    <DatePicker fx:id="dateOfBirth" prefWidth="200.0" AnchorPane.bottomAnchor="196.28" AnchorPane.leftAnchor="209.0" AnchorPane.rightAnchor="127.0" AnchorPane.topAnchor="134.0" />
-    <ComboBox fx:id="gender" cache="true" cacheHint="DEFAULT" depthTest="INHERIT" editable="false" opacity="1.0" prefHeight="21.0" prefWidth="175.0" promptText="не выбран" visibleRowCount="2" AnchorPane.bottomAnchor="148.37" AnchorPane.leftAnchor="209.0" AnchorPane.rightAnchor="142.0" AnchorPane.topAnchor="182.91">
+    <TextField fx:id="FIO" prefHeight="22.998045654296902" prefWidth="330.4141845703125" AnchorPane.bottomAnchor="270.37" AnchorPane.leftAnchor="209.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="88.91" />
+    <DatePicker fx:id="dateOfBirth" prefWidth="22.9" AnchorPane.bottomAnchor="225.36" AnchorPane.leftAnchor="209.0" AnchorPane.rightAnchor="127.0" AnchorPane.topAnchor="134.0" />
+    <ComboBox fx:id="gender" cache="true" cacheHint="DEFAULT" depthTest="INHERIT" editable="false" opacity="1.0" prefHeight="22.998045654296874" prefWidth="207.4141845703125" promptText="не выбран" visibleRowCount="2" AnchorPane.bottomAnchor="176.37" AnchorPane.leftAnchor="209.0" AnchorPane.rightAnchor="142.0" AnchorPane.topAnchor="182.91">
       <items>
         <FXCollections fx:factory="observableArrayList">
           <String fx:value="мужской" />
@@ -35,7 +35,7 @@
       </items>
     </ComboBox>
     <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="ВИД ПАСПОРТА" AnchorPane.bottomAnchor="106.36" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="348.37" AnchorPane.topAnchor="227.52" />
-    <ComboBox id="typeOf" fx:id="typeOfPassport" editable="false" prefHeight="21.0" prefWidth="175.0" promptText="не выбран" AnchorPane.bottomAnchor="103.37" AnchorPane.leftAnchor="209.0" AnchorPane.rightAnchor="142.0" AnchorPane.topAnchor="227.91">
+    <ComboBox id="typeOf" fx:id="typeOfPassport" editable="false" onAction="#selectDutyAmount" prefHeight="23.00125" prefWidth="207.4141845703125" promptText="не выбран" AnchorPane.bottomAnchor="131.37" AnchorPane.leftAnchor="209.0" AnchorPane.rightAnchor="142.0" AnchorPane.topAnchor="227.91">
       <items>
         <FXCollections fx:factory="observableArrayList">
           <String fx:value="внутренний" />
@@ -43,11 +43,12 @@
         </FXCollections>
       </items>
     </ComboBox>
-    <Button fx:id="send" mnemonicParsing="false" onAction="#parseCivilianData" prefWidth="114.41421386718753" text="Отправить" AnchorPane.bottomAnchor="24.28" AnchorPane.leftAnchor="409.78" AnchorPane.rightAnchor="34.22" AnchorPane.topAnchor="299.0">
+    <Button fx:id="send" mnemonicParsing="false" onAction="#parsePassportApplicationData" prefHeight="31.00125" prefWidth="114.41418457031253" text="Отправить" AnchorPane.bottomAnchor="24.28" AnchorPane.leftAnchor="424.59" AnchorPane.rightAnchor="19.41" AnchorPane.topAnchor="327.0">
       <font>
         <Font size="16.0" fx:id="x2" />
       </font>
     </Button>
-    <Button fx:id="cancel" font="$x2" mnemonicParsing="false" onAction="#closeStage" prefWidth="114.414084570315" text="Отмена" AnchorPane.bottomAnchor="24.28" AnchorPane.leftAnchor="259.79" AnchorPane.rightAnchor="184.21" AnchorPane.topAnchor="299.0" />
+    <Button fx:id="cancel" font="$x2" mnemonicParsing="false" onAction="#closeStage" prefHeight="31.00125" prefWidth="114.41418457031247" text="Отмена" AnchorPane.bottomAnchor="24.28" AnchorPane.leftAnchor="279.01" AnchorPane.rightAnchor="164.99" AnchorPane.topAnchor="327.0" />
+    <CheckBox fx:id="payment" alignment="CENTER_LEFT" allowIndeterminate="false" blendMode="SRC_OVER" cache="false" contentDisplay="LEFT" disable="false" focusTraversable="true" font="$x1" indeterminate="false" layoutX="48.0" layoutY="285.0" mnemonicParsing="false" mouseTransparent="false" pickOnBounds="false" prefWidth="491.0" selected="false" text="ОПЛАТИТЬ ГОСПОШЛИНУ" textAlignment="LEFT" textOverrun="ELLIPSIS" underline="false" visible="false" wrapText="false" />
   </children>
 </AnchorPane>
