@@ -72,7 +72,8 @@ public class PassportApplicationController extends PassportServiceController{
 
         notificate("Заявление успешно отправлено!", NotificationType.SUCCESS);
 
-        MySQLDataBase.insertDataInCivilian(civilian);
+        int generatedId = MySQLDataBase.insertDataInCivilian(civilian);
+        MySQLDataBase.insertDataInPassportApplication(generatedId, passportApplication);
 
         System.out.println(civilian.getFIO());
         System.out.println(civilian.getDateOfBirth());
