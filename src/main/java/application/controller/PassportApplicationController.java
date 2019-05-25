@@ -33,7 +33,7 @@ public class PassportApplicationController extends PassportServiceController{
     @FXML
     private Button cancel;
 
-    public void parseCivilianData(ActionEvent event){
+    public void parsePassportApplicationData(ActionEvent event){
         Civilian civilian = new Civilian();
 
         if(FIO.getText().equals("")){

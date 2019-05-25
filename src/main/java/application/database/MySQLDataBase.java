@@ -41,7 +41,8 @@ public class MySQLDataBase {
 
     public static int insertDataInCivilian(Civilian civilian) {
         int id = 0;
-        String querySelect = "SELECT civilian_id FROM passportService.civilian WHERE FIO LIKE '" + civilian.getFIO() + "%';";
+        String querySelect = "SELECT civilian_id FROM passportService.civilian WHERE (FIO LIKE '" + civilian.getFIO() + "%' AND " +
+                "date_of_birth = '" + civilian.getDateOfBirth() + "');";
         try {
             statement.executeQuery(querySelect);
             resultSet = statement.getResultSet();
@@ -77,5 +78,4 @@ public class MySQLDataBase {
             e.printStackTrace();
         }
     }
-
 }

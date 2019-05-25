@@ -2,13 +2,51 @@
 
 <?import java.lang.*?>
 <?import java.util.*?>
+<?import javafx.collections.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="application.controller.ResidenceApplicationController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane minWidth="593.0" prefHeight="560.0" prefWidth="593.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.ResidenceApplicationController">
+  <children>
+    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Заявление на прописку" AnchorPane.bottomAnchor="523.11" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="172.4" AnchorPane.topAnchor="13.89">
+      <font>
+        <Font name="Arial Bold Italic" size="20.0" />
+      </font>
+    </Text>
+    <Line endX="291.0" endY="-147.0" layoutX="300.0" layoutY="200.0" startX="-299.0" startY="-145.0" />
+    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Сведения о гражданине" AnchorPane.bottomAnchor="473.08" AnchorPane.leftAnchor="200.39" AnchorPane.rightAnchor="200.4" AnchorPane.topAnchor="68.52">
+      <font>
+        <Font name="Arial Bold Italic" size="16.0" fx:id="x1" />
+      </font>
+    </Text>
+    <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="ФИО" AnchorPane.bottomAnchor="430.08" AnchorPane.leftAnchor="52.75" AnchorPane.rightAnchor="503.25" AnchorPane.topAnchor="111.52" />
+    <TextField fx:id="FIO" prefHeight="22.998046875" prefWidth="327.0" AnchorPane.bottomAnchor="429.0" AnchorPane.leftAnchor="217.3" AnchorPane.rightAnchor="48.7" AnchorPane.topAnchor="108.0" />
+    <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="ДАТА РОЖДЕНИЯ" AnchorPane.bottomAnchor="391.08" AnchorPane.leftAnchor="53.3" AnchorPane.rightAnchor="395.91" AnchorPane.topAnchor="150.52" />
+    <DatePicker fx:id="dateOfBirth" AnchorPane.bottomAnchor="391.08" AnchorPane.leftAnchor="217.3" AnchorPane.rightAnchor="220.7" AnchorPane.topAnchor="150.52" />
+    <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="Сведения о паспорте" AnchorPane.bottomAnchor="336.08" AnchorPane.leftAnchor="208.28" AnchorPane.rightAnchor="208.27" AnchorPane.topAnchor="205.52" />
+    <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="СЕРИЯ" AnchorPane.bottomAnchor="297.08" AnchorPane.leftAnchor="52.3" AnchorPane.rightAnchor="484.63" AnchorPane.topAnchor="244.52" />
+    <TextField fx:id="series" prefWidth="155.4453125" AnchorPane.bottomAnchor="297.0" AnchorPane.leftAnchor="129.3" AnchorPane.rightAnchor="307.7" AnchorPane.topAnchor="241.0" />
+    <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="НОМЕР" AnchorPane.bottomAnchor="257.08" AnchorPane.leftAnchor="52.3" AnchorPane.rightAnchor="482.03" AnchorPane.topAnchor="284.52" />
+    <TextField fx:id="number" prefWidth="156.0" AnchorPane.bottomAnchor="257.0" AnchorPane.leftAnchor="129.3" AnchorPane.rightAnchor="307.7" AnchorPane.topAnchor="281.0" />
+    <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="АДРЕС ДЛЯ ПРОПИСКИ" AnchorPane.bottomAnchor="196.08" AnchorPane.leftAnchor="52.3" AnchorPane.rightAnchor="351.05" AnchorPane.topAnchor="345.52" />
+    <TextField fx:id="address" prefWidth="491.00000000000006" AnchorPane.bottomAnchor="156.0" AnchorPane.leftAnchor="53.3" AnchorPane.rightAnchor="48.7" AnchorPane.topAnchor="382.0" />
+    <ComboBox fx:id="typeOfResidence" prefHeight="21.0" prefWidth="143.7890625" promptText="не выбран" AnchorPane.bottomAnchor="113.0" AnchorPane.leftAnchor="209.3" AnchorPane.rightAnchor="239.7" AnchorPane.topAnchor="426.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="постоянная" />
+          <String fx:value="временная" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+    <Button fx:id="cancel" layoutY="497.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="104.0" text="Отмена" AnchorPane.leftAnchor="303.3" AnchorPane.rightAnchor="185.7">
+      <font>
+        <Font size="16.0" fx:id="x2" />
+      </font>
+    </Button>
+    <Button id="btnRegistrationResidence" fx:id="send" font="$x2" layoutY="497.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="103.599609375" text="Отправить" AnchorPane.leftAnchor="440.3" AnchorPane.rightAnchor="48.7" />
+    <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="ТИП ПРОПИСКИ" AnchorPane.bottomAnchor="114.08" AnchorPane.leftAnchor="52.3" AnchorPane.rightAnchor="412.93" AnchorPane.topAnchor="427.52" />
+  </children>
 </AnchorPane>
