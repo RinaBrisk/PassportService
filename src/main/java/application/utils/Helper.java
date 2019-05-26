@@ -1,15 +1,10 @@
 package application.utils;
 
-import javafx.geometry.Pos;
-import javafx.scene.image.ImageView;
-
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 public class Helper {
@@ -17,18 +12,33 @@ public class Helper {
     private static String RES_PATH = "src/main/resources/";
     private static List<String> mySqlConnection;
 
-    public static String getMySqlConnection(int i) {
-        mySqlConnection = readFromFile(RES_PATH + "MySqlConnection.txt");
-        return mySqlConnection.get(i);
+    public static String getMySqlConnectionString() {
+        return mySqlConnection.get(0);
     }
 
-    private static List<String> readFromFile(String fileName) {
+    public static boolean haveLogin(String login){
+        for(int i = 1; i < mySqlConnection.size(); i = i + 2){
+            if(login.equals(mySqlConnection.get(i)))
+                return true;
+        }
+        return false;
+    }
+
+    public static boolean havePassword(String password){
+        for(int i = 2; i < mySqlConnection.size(); i = i + 2){
+            if(password.equals(mySqlConnection.get(i)))
+                return true;
+        }
+        return false;
+    }
+
+    public static void initialMySQLConnection() {
         List<String> lines = new ArrayList<>();
         try {
-            lines.addAll(Files.readAllLines(Paths.get(fileName), StandardCharsets.UTF_8));
+            lines.addAll(Files.readAllLines(Paths.get(RES_PATH + "MySqlConnection.txt"), StandardCharsets.UTF_8));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return lines;
+        mySqlConnection = lines;
     }
 }

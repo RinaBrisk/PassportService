@@ -19,12 +19,11 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
 
-        MySQLDataBase.getConnection();
         try {
             this.primaryStage = primaryStage;
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("templates/passportService.fxml")));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("templates/login.fxml")));
             primaryStage.setTitle("Паспортный стол");
-            primaryStage.setScene(new Scene(root, 410, 300));
+            primaryStage.setScene(new Scene(root, 330, 290));
             primaryStage.show();
         } catch (Exception e) {
             e.printStackTrace();
@@ -33,7 +32,8 @@ public class Main extends Application {
 
     @Override
     public void stop() throws Exception {
-        MySQLDataBase.breakConnection();
+        if(MySQLDataBase.isHaveConnection())
+            MySQLDataBase.breakConnection();
         super.stop();
     }
 

@@ -11,23 +11,21 @@ public class MySQLDataBase {
     private static Connection connection;
     private static Statement statement;
     private static ResultSet resultSet;
+    private static boolean haveConnection = false;
 
-    enum mySqlConData {CONNECTION_STRING, LOGIN, PASSWORD}
+    public static boolean isHaveConnection(){
+        return haveConnection;
+    }
 
-    public static void getConnection() {
+    public static void getConnection(String login, String password) {
         try {
-            connection = DriverManager.getConnection(Helper.getMySqlConnection(mySqlConData.CONNECTION_STRING.ordinal()),
-                    Helper.getMySqlConnection(mySqlConData.LOGIN.ordinal()),
-                    Helper.getMySqlConnection(mySqlConData.PASSWORD.ordinal()));
+            connection = DriverManager.getConnection(Helper.getMySqlConnectionString(), login, password);
+            statement = connection.createStatement();
         } catch (SQLException e) {
             System.out.println("Can't get connection. Incorrect URL");
             e.printStackTrace();
         }
-        try {
-            statement = connection.createStatement();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        haveConnection = true;
     }
 
     public static void breakConnection() {
