@@ -1,4 +1,6 @@
 jdbc:mysql://localhost:3306/passportService?verifyServerCertificate=false&useSSL=false&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC
 root
 systemMySQL
+user
+userPas
 

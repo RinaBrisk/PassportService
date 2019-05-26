@@ -2,6 +2,7 @@ package application.database;
 
 import application.DTO.Civilian;
 import application.DTO.PassportApplication;
+import application.DTO.ResidenceApplication;
 import application.utils.Helper;
 
 import java.sql.*;
@@ -13,7 +14,7 @@ public class MySQLDataBase {
     private static ResultSet resultSet;
     private static boolean haveConnection = false;
 
-    public static boolean isHaveConnection(){
+    public static boolean isHaveConnection() {
         return haveConnection;
     }
 
@@ -52,7 +53,7 @@ public class MySQLDataBase {
                 if (resultSet.next()) {
                     id = resultSet.getInt(1);
                 }
-            }else{
+            } else {
                 id = resultSet.getInt(1);
             }
         } catch (SQLException e) {
@@ -69,11 +70,47 @@ public class MySQLDataBase {
             resultSet = statement.getResultSet();
             if (!resultSet.next()) {
                 String queryInsert = "INSERT INTO passportService.passport_application (civilian, type_p) \n" +
-                        " VALUES ('" + civilianId + "', '" + passportApplication.getTypeOfPassport().getOrdinalNumber()  + "')";
+                        " VALUES ('" + civilianId + "', '" + passportApplication.getTypeOfPassport().getOrdinalNumber() + "');";
                 statement.executeUpdate(queryInsert);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
+    public static void insertDataInResidenceApplication(ResidenceApplication residenceApplication){
+        String querySelect = "SELECT * FROM passportService.residence_application WHERE (passport = '" + residenceApplication.getPassport() + "' AND" +
+                " type_r = '" + residenceApplication.getTypeOfResidence() + "');";
+        try {
+            statement.executeQuery(querySelect);
+            resultSet = statement.getResultSet();
+            if (!resultSet.next()) {
+                String queryInsert = "INSERT INTO passportService.residence_application (passport, type_r, address) \n" +
+                        " VALUES ('" + residenceApplication.getPassport() + "', '" + residenceApplication.getTypeOfResidence().getOrdinalNumber() + "', '" +
+                residenceApplication.getAddress() + "');";
+                statement.executeUpdate(queryInsert);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static int hasPassportInDB(String series, String number) {
+        int id = 0;
+        String querySelect = "SELECT * FROM passportService.passport WHERE (series = '" + series + "' AND" +
+                " number_p = '" + number + "');";
+        try {
+            statement.executeQuery(querySelect);
+            resultSet = statement.getResultSet();
+            if (!resultSet.next()) {
+                return id;
+            }else{
+                id = resultSet.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return id;
+    }
+
 }

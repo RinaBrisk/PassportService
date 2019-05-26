@@ -4,6 +4,7 @@ import application.Main;
 import application.database.MySQLDataBase;
 import application.utils.Helper;
 import application.utils.NotificationType;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,19 +13,22 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 
 public class LoginController extends PassportServiceController {
 
     @FXML
-    TextField login;
+    private TextField login;
 
     @FXML
-    TextField password;
+    private TextField password;
 
     @FXML
-    Button input;
+    private Button input;
+
+    private static Boolean adminVersion = false;
 
     public void inputInSystem() {
         Helper.initialMySQLConnection();
@@ -35,6 +39,9 @@ public class LoginController extends PassportServiceController {
         } else if (!Helper.havePassword(password.getText())) {
             notificate("Неправильный пароль!", NotificationType.ERROR);
             return;
+        }
+        if(login.getText().equals("root") && (password.getText().equals("systemMySQL"))){
+            adminVersion = true;
         }
         MySQLDataBase.getConnection(login.getText(), password.getText());
         openPassportService();
@@ -49,6 +56,12 @@ public class LoginController extends PassportServiceController {
             stage.initModality(Modality.NONE);
             stage.initOwner(new Main().getPrimaryStage());
             stage.setScene(new Scene(root));
+//            stage.setOnShowing(event -> {
+//                if(adminVersion){
+//                    Button adminBtn = PassportServiceController.getAdminButton();
+//                    adminBtn.setVisible(true);
+//                }
+//            });
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
