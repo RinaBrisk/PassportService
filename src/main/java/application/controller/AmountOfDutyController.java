@@ -3,7 +3,6 @@ package application.controller;
 import application.DTO.AmountOfDuty;
 import application.database.MySQLDataBase;
 import application.utils.NotificationType;
-import com.mysql.cj.protocol.a.MysqlBinaryValueDecoder;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;

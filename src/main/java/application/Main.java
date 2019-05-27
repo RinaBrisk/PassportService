@@ -23,7 +23,7 @@ public class Main extends Application {
             this.primaryStage = primaryStage;
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("templates/login.fxml")));
             primaryStage.setTitle("Паспортный стол");
-            primaryStage.setScene(new Scene(root, 330, 290));
+            primaryStage.setScene(new Scene(root, 330, 270));
             primaryStage.show();
         } catch (Exception e) {
             e.printStackTrace();

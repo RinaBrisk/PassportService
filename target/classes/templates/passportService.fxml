@@ -2,12 +2,18 @@
 
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="action_pane" blendMode="SRC_OVER" disable="false" minHeight="264.0" minWidth="411.20709228515625" prefHeight="264.0" prefWidth="411.20709228515625" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.PassportServiceController">
+<AnchorPane id="action_pane" blendMode="SRC_OVER" disable="false" minHeight="264.0" minWidth="411.20709228515625" prefHeight="278.0" prefWidth="441.20709228515625" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.PassportServiceController">
   <children>
+    <ImageView fitHeight="301.95636425795766" fitWidth="453.7595520019531" layoutX="-13.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../../../../../../Users/Rina/Desktop/images.jpg" />
+      </image>
+    </ImageView>
     <Text fontSmoothingType="GRAY" strikethrough="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Паспортный стол" underline="false" AnchorPane.bottomAnchor="248.19" AnchorPane.leftAnchor="114.22" AnchorPane.rightAnchor="137.99" AnchorPane.topAnchor="18.81">
       <font>
         <Font name="Arial Bold Italic" size="20.0" />
@@ -18,7 +24,7 @@
         <Font name="Arial Bold Italic" size="18.0" />
       </font>
     </Text>
-    <Line endX="161.0" endY="-12.0" startX="-248.0" startY="-10.0" AnchorPane.bottomAnchor="236.29" AnchorPane.leftAnchor="0.29" AnchorPane.rightAnchor="0.5" AnchorPane.topAnchor="46.71" />
+    <Line endX="192.00289916992188" endY="-61.93030548095703" startX="-288.8521423339844" startY="-61.347412109375" AnchorPane.bottomAnchor="236.29" AnchorPane.leftAnchor="0.29" AnchorPane.rightAnchor="0.5" AnchorPane.topAnchor="46.71" />
     <Button id="" fx:id="btnRegistrationPassport" focusTraversable="false" layoutY="120.0" mnemonicParsing="false" onAction="#openPassportApplication" prefHeight="27.000099999997474" prefWidth="183.99709228515627" text="Оформить паспорт" visible="true" AnchorPane.leftAnchor="113.5" AnchorPane.rightAnchor="113.71">
       <font>
         <Font name="Arial Italic" size="16.0" fx:id="x1" />

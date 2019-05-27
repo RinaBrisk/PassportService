@@ -4,12 +4,18 @@
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane minHeight="274.0" minWidth="336.0118749999999" prefHeight="278.0" prefWidth="336.0118749999999" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.LoginController">
   <children>
+    <ImageView fitHeight="278.0" fitWidth="417.7595602540926" layoutX="-82.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../../../../../../Users/Rina/Desktop/images.jpg" />
+      </image>
+    </ImageView>
     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Паспортный стол" AnchorPane.bottomAnchor="363.0" AnchorPane.leftAnchor="72.22" AnchorPane.rightAnchor="336.22" AnchorPane.topAnchor="14.0">
       <font>
         <Font name="Arial Bold Italic" size="20.0" />
@@ -25,6 +31,6 @@
     <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="пароль" AnchorPane.bottomAnchor="235.36" AnchorPane.leftAnchor="69.17" AnchorPane.rightAnchor="473.17" AnchorPane.topAnchor="146.24" />
     <TextField fx:id="login" layoutY="104.0" prefWidth="135.6525021362304" AnchorPane.leftAnchor="145.13" AnchorPane.rightAnchor="55.23" />
     <TextField fx:id="password" layoutY="145.0" prefWidth="135.6518917846679" AnchorPane.leftAnchor="145.13" AnchorPane.rightAnchor="55.23" />
-    <Button fx:id="input" font="$x1" minHeight="22.998046875" mnemonicParsing="false" onAction="#inputInSystem" prefHeight="22.998046875" prefWidth="92.13187499999992" text="Войти" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="120.82" AnchorPane.rightAnchor="123.06" AnchorPane.topAnchor="196.0" />
+    <Button fx:id="input" font="$x1" layoutY="196.0" minHeight="22.998046875" mnemonicParsing="false" onAction="#inputInSystem" prefHeight="29.0" prefWidth="92.13187499999992" text="Войти" AnchorPane.leftAnchor="120.82" AnchorPane.rightAnchor="123.06" />
   </children>
 </AnchorPane>

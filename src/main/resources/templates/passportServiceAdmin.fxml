@@ -2,12 +2,18 @@
 
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane id="action_pane" blendMode="SRC_OVER" disable="false" minHeight="264.0" minWidth="411.20709228515625" prefHeight="264.0" prefWidth="411.20709228515625" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.PassportServiceController">
   <children>
+    <ImageView fitHeight="277.0" fitWidth="416.2568244703313" layoutX="0.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../../../../../../Users/Rina/Desktop/images.jpg" />
+      </image>
+    </ImageView>
     <Text fontSmoothingType="GRAY" strikethrough="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Паспортный стол" underline="false" AnchorPane.bottomAnchor="248.19" AnchorPane.leftAnchor="114.22" AnchorPane.rightAnchor="137.99" AnchorPane.topAnchor="18.81">
       <font>
         <Font name="Arial Bold Italic" size="20.0" />
