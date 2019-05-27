@@ -98,7 +98,7 @@ public class MySQLDataBase {
     public static int hasPassportInDB(String series, String number) {
         int id = 0;
         String querySelect = "SELECT * FROM passportService.passport WHERE (series = '" + series + "' AND" +
-                " number_p = '" + number + "');";
+                " number_p = '" + number + "' AND " + "type_p = '1'" + ");";
         try {
             statement.executeQuery(querySelect);
             resultSet = statement.getResultSet();
