@@ -25,5 +25,7 @@
       </font>
     </Button>
     <Button id="" fx:id="btnRegistrationResidence" alignment="CENTER" cancelButton="false" focusTraversable="false" font="$x1" layoutY="168.0" mnemonicParsing="false" onAction="#openResidenceApplication" prefHeight="29.0" prefWidth="199.99709228515627" text="Оформить прописку" AnchorPane.leftAnchor="105.5" AnchorPane.rightAnchor="105.71" />
+    <Button id="refactorAmountOf" fx:id="refactorAmountOfDuty" font="$x1" layoutY="215.0" mnemonicParsing="false" text="Изменить сумму госпошлины" visible="false" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="74.21" />
+    <Button fx:id="amountOfDuty" focusTraversable="false" font="$x1" layoutY="219.0" mnemonicParsing="false" onAction="#openAmountOfDuty" prefWidth="264.99709228515627" text="Изменить сумму госпошлины" AnchorPane.leftAnchor="74.0" AnchorPane.rightAnchor="72.21" />
   </children>
 </AnchorPane>

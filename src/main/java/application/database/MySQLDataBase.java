@@ -113,4 +113,13 @@ public class MySQLDataBase {
         return id;
     }
 
+    public static void updateAmountOfDuty(String amount, int oldAmount){
+        String queryUpdate = "UPDATE amount_of_duty SET amount = '" + amount + "' where amount = '" + oldAmount + "';";
+        try {
+            statement.executeUpdate(queryUpdate);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

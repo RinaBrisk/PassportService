@@ -4,7 +4,6 @@ import application.Main;
 import application.database.MySQLDataBase;
 import application.utils.Helper;
 import application.utils.NotificationType;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,7 +12,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 
@@ -50,18 +48,17 @@ public class LoginController extends PassportServiceController {
 
     private void openPassportService() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("templates/passportService.fxml"));
+            FXMLLoader fxmlLoader;
+            if(adminVersion){
+                fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("templates/passportServiceAdmin.fxml"));
+            }else{
+                fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("templates/passportService.fxml"));
+            }
             Parent root = fxmlLoader.load();
             Stage stage = new Stage();
             stage.initModality(Modality.NONE);
             stage.initOwner(new Main().getPrimaryStage());
             stage.setScene(new Scene(root));
-//            stage.setOnShowing(event -> {
-//                if(adminVersion){
-//                    Button adminBtn = PassportServiceController.getAdminButton();
-//                    adminBtn.setVisible(true);
-//                }
-//            });
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

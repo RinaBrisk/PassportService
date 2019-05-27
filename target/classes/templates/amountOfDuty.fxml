@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minWidth="410.0" prefHeight="280.0" prefWidth="483.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.AmountOfDutyController">
+  <children>
+    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Изменить сумму госпошлины" AnchorPane.bottomAnchor="240.11" AnchorPane.leftAnchor="87.0" AnchorPane.rightAnchor="87.42" AnchorPane.topAnchor="16.89">
+      <font>
+        <Font name="Arial Bold Italic" size="20.0" />
+      </font>
+    </Text>
+    <Line endX="180.0" endY="-145.0" layoutX="300.0" layoutY="200.0" startX="-299.0" startY="-143.0" />
+    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Новая сумма госпошлины на внутренний паспорт:" AnchorPane.bottomAnchor="189.08" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="37.05" AnchorPane.topAnchor="72.52">
+      <font>
+        <Font name="Arial Bold Italic" size="16.0" fx:id="x1" />
+      </font>
+    </Text>
+    <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="Новая сумма госпошлины на загранпаспорт:" AnchorPane.bottomAnchor="116.08" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="87.55" AnchorPane.topAnchor="145.52" />
+    <TextField id="AmountOf" fx:id="amountOfDomestic" layoutY="105.0" prefWidth="200.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="258.0" />
+    <TextField fx:id="amountOfForeign" layoutY="185.0" prefWidth="200.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="258.0" />
+    <Button id="cancel" mnemonicParsing="false" onAction="#closeStage" text="Отмена" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="261.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="232.0">
+      <font>
+        <Font size="16.0" fx:id="x2" />
+      </font>
+    </Button>
+    <Button id="applay" font="$x2" mnemonicParsing="false" onAction="#changeOfAmount" text="Принять" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="367.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="232.0" />
+  </children>
+</AnchorPane>
