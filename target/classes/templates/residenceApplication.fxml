@@ -12,7 +12,7 @@
   <children>
     <ImageView fitHeight="434.9999694824219" fitWidth="653.6884818833672" layoutX="-18.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
       <image>
-        <Image url="@../../../../../../Users/Rina/Desktop/images.jpg" />
+        <Image url="@../background.jpg" />
       </image>
     </ImageView>
     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Заявление на прописку" AnchorPane.bottomAnchor="523.11" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="172.4" AnchorPane.topAnchor="13.89">

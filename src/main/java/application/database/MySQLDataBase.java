@@ -122,4 +122,21 @@ public class MySQLDataBase {
         }
     }
 
+    public static void checkFinishedPassport(){
+        String querySelect = "SELECT * FROM passportService.registration_passport WHERE (passport = '" + residenceApplication.getPassport() + "' AND" +
+                " type_r = '" + residenceApplication.getTypeOfResidence() + "');";
+        try {
+            statement.executeQuery(querySelect);
+            resultSet = statement.getResultSet();
+            if (!resultSet.next()) {
+                String queryInsert = "INSERT INTO passportService.residence_application (passport, type_r, address) \n" +
+                        " VALUES ('" + residenceApplication.getPassport() + "', '" + residenceApplication.getTypeOfResidence().getOrdinalNumber() + "', '" +
+                        residenceApplication.getAddress() + "');";
+                statement.executeUpdate(queryInsert);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

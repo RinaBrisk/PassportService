@@ -11,7 +11,6 @@ import java.util.Objects;
 public class Main extends Application {
 
     private Stage primaryStage;
-
     public Stage getPrimaryStage(){
         return primaryStage;
     }

@@ -46,6 +46,26 @@ public class PassportServiceController {
         stage.show();
     }
 
+    public void openFinishedPassports() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("templates/finishedPassports.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initOwner(new Main().getPrimaryStage());
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+
+    public void openFinishedResidences() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("templates/finishedResidences.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initOwner(new Main().getPrimaryStage());
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+
     public static void notificate(String message, NotificationType type) {
         Notifications notification = Notifications
                 .create()

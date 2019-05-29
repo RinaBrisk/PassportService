@@ -7,11 +7,11 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="action_pane" blendMode="SRC_OVER" disable="false" minHeight="264.0" minWidth="411.20709228515625" prefHeight="278.0" prefWidth="441.20709228515625" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.PassportServiceController">
+<AnchorPane id="action_pane" blendMode="SRC_OVER" disable="false" minHeight="264.0" minWidth="411.20709228515625" prefHeight="375.0" prefWidth="441.20709228515625" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.PassportServiceController">
   <children>
-    <ImageView fitHeight="301.95636425795766" fitWidth="453.7595520019531" layoutX="-13.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="375.0" fitWidth="563.5245837437462" layoutX="-13.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
       <image>
-        <Image url="@../../../../../../Users/Rina/Desktop/images.jpg" />
+        <Image url="@../background.jpg" />
       </image>
     </ImageView>
     <Text fontSmoothingType="GRAY" strikethrough="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Паспортный стол" underline="false" AnchorPane.bottomAnchor="248.19" AnchorPane.leftAnchor="114.22" AnchorPane.rightAnchor="137.99" AnchorPane.topAnchor="18.81">
@@ -31,5 +31,7 @@
       </font>
     </Button>
     <Button id="" fx:id="btnRegistrationResidence" alignment="CENTER" cancelButton="false" focusTraversable="false" font="$x1" layoutY="168.0" mnemonicParsing="false" onAction="#openResidenceApplication" prefHeight="29.0" prefWidth="199.99709228515627" text="Оформить прописку" AnchorPane.leftAnchor="105.5" AnchorPane.rightAnchor="105.71" />
+    <Button id="finishedPassport" fx:id="finishedPassports" font="$x1" layoutY="222.0" mnemonicParsing="false" onAction="#openFinishedPassports" prefWidth="297.99709228515627" text="Проверить готовность паспорта" AnchorPane.leftAnchor="92.43" AnchorPane.rightAnchor="50.78" />
+    <Button font="$x1" layoutY="274.0" mnemonicParsing="false" onAction="#openFinishedResidences" prefWidth="297.99709228515627" text="Проверить готовность прописки" AnchorPane.leftAnchor="92.43" AnchorPane.rightAnchor="50.78" />
   </children>
 </AnchorPane>

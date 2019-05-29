@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -13,7 +10,7 @@
   <children>
     <ImageView fitHeight="337.8559893293154" fitWidth="507.70709228515625" layoutX="0.0" layoutY="-17.0" pickOnBounds="true" preserveRatio="true">
       <image>
-        <Image url="@../../../../../../Users/Rina/Desktop/images.jpg" />
+        <Image url="@../background.jpg"/>
       </image>
     </ImageView>
     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Изменить сумму госпошлины" AnchorPane.bottomAnchor="240.11" AnchorPane.leftAnchor="87.0" AnchorPane.rightAnchor="87.42" AnchorPane.topAnchor="16.89">
@@ -30,7 +27,7 @@
     <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="Новая сумма госпошлины на загранпаспорт:" AnchorPane.bottomAnchor="116.08" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="87.55" AnchorPane.topAnchor="145.52" />
     <TextField id="AmountOf" fx:id="amountOfDomestic" layoutY="105.0" prefWidth="200.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="258.0" />
     <TextField fx:id="amountOfForeign" layoutY="185.0" prefWidth="200.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="258.0" />
-    <Button id="cancel" mnemonicParsing="false" onAction="#closeStage" prefHeight="31.8778076171875" text="Отмена" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="261.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="246.0">
+    <Button id="cancel" mnemonicParsing="false" onAction="#closeStage" prefHeight="31.8778076171875" text="Отмена" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="247.5" AnchorPane.rightAnchor="153.5" AnchorPane.topAnchor="246.0">
       <font>
         <Font size="16.0" fx:id="x2" />
       </font>

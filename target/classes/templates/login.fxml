@@ -13,7 +13,7 @@
   <children>
     <ImageView fitHeight="278.0" fitWidth="417.7595602540926" layoutX="-82.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
       <image>
-        <Image url="@../../../../../../Users/Rina/Desktop/images.jpg" />
+        <Image url="@../background.jpg" />
       </image>
     </ImageView>
     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Паспортный стол" AnchorPane.bottomAnchor="363.0" AnchorPane.leftAnchor="72.22" AnchorPane.rightAnchor="336.22" AnchorPane.topAnchor="14.0">

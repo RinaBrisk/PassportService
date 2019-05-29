@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="228.18182373046875" minWidth="590.4535522460938" prefHeight="228.18182373046875" prefWidth="590.4535522460938" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.FinishedPassportsController">
+  <children>
+    <ImageView fitHeight="461.4619225097631" fitWidth="693.4537025193127" layoutX="0.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@../background.jpg" />
+      </image>
+    </ImageView>
+    <Text layoutX="170.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Готовность паспортов">
+      <font>
+        <Font name="Arial Bold Italic" size="20.0" />
+      </font>
+    </Text>
+    <Line endX="350.0" endY="-168.0" layoutX="338.0" layoutY="217.0" startX="-336.0" startY="-168.0" />
+    <Text layoutX="72.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ФИО">
+      <font>
+        <Font name="Arial Bold Italic" size="16.0" fx:id="x1" />
+      </font>
+    </Text>
+    <Text font="$x1" layoutX="72.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Тип паспорта" />
+    <TextField layoutX="220.0" layoutY="82.0" prefWidth="265.0" />
+    <Button fx:id="change" onAction="#changeFinishedPassport" layoutX="242.0" layoutY="164.0" mnemonicParsing="false" text="Проверить">
+      <font>
+        <Font size="16.0" />
+      </font>
+    </Button>
+    <ComboBox fx:id="typeOfPassport" layoutX="220.0" layoutY="120.0" prefHeight="21.0" prefWidth="172.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="внутренний" />
+          <String fx:value="заграничный" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+  </children>
+</AnchorPane>
