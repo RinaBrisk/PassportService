@@ -4,9 +4,9 @@ public class ResidenceApplication {
 
     private int passportID;
     private TypeOfResidence typeOfResidence;
-    private String address;
+    private Address address;
 
-    public ResidenceApplication(int passport, TypeOfResidence typeOfResidence, String address){
+    public ResidenceApplication(int passport, TypeOfResidence typeOfResidence, Address address){
         this.passportID = passport;
         this.typeOfResidence = typeOfResidence;
         this.address = address;
@@ -20,7 +20,7 @@ public class ResidenceApplication {
         return passportID;
     }
 
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
 
@@ -32,7 +32,7 @@ public class ResidenceApplication {
         this.passportID = passportID;
     }
 
-    public void setAddress(String address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 

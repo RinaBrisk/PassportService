@@ -27,13 +27,13 @@
       </font>
     </Text>
     <Text font="$x1" layoutX="72.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Тип паспорта" />
-    <TextField layoutX="220.0" layoutY="82.0" prefWidth="265.0" />
-    <Button fx:id="change" onAction="#changeFinishedPassport" layoutX="242.0" layoutY="164.0" mnemonicParsing="false" text="Проверить">
+    <TextField fx:id="FIO" layoutX="220.0" layoutY="82.0" prefWidth="265.0" />
+    <Button fx:id="change" layoutX="242.0" layoutY="164.0" mnemonicParsing="false" onAction="#changeFinishedPassport" text="Проверить">
       <font>
         <Font size="16.0" />
       </font>
     </Button>
-    <ComboBox fx:id="typeOfPassport" layoutX="220.0" layoutY="120.0" prefHeight="21.0" prefWidth="172.0">
+    <ComboBox fx:id="typeOfPassport" layoutX="220.0" layoutY="120.0" prefHeight="21.0" prefWidth="172.0" promptText="не выбрано">
       <items>
         <FXCollections fx:factory="observableArrayList">
           <String fx:value="внутренний" />

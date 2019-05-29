@@ -6,8 +6,6 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.shape.Line?>
@@ -32,17 +30,17 @@
       </font>
     </Text>
     <Text font="$x1" layoutX="72.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Тип прописки" />
-    <TextField layoutX="220.0" layoutY="82.0" prefWidth="265.0" />
-    <Button fx:id="change" layoutX="242.0" layoutY="164.0" mnemonicParsing="false" onAction="#changeFinishedResidence" text="Проверить">
+    <TextField fx:id="FIO" layoutX="220.0" layoutY="82.0" prefWidth="265.0" />
+    <Button layoutX="242.0" layoutY="164.0" mnemonicParsing="false" onAction="#changeFinishedResidence" text="Проверить">
       <font>
         <Font size="16.0" />
       </font>
     </Button>
-    <ComboBox fx:id="typeOfResidence" layoutX="215.0" layoutY="121.0" prefHeight="21.0" prefWidth="163.0">
+    <ComboBox fx:id="typeOfResidence" layoutX="220.0" layoutY="121.0" prefHeight="21.0" prefWidth="163.0" promptText="не выбрано">
       <items>
         <FXCollections fx:factory="observableArrayList">
-            <String fx:value="постоянная" />
-            <String fx:value="временная" />
+          <String fx:value="постоянная" />
+          <String fx:value="временная" />
         </FXCollections>
       </items>
     </ComboBox>

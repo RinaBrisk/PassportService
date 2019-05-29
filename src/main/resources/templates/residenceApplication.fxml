@@ -8,9 +8,9 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane minHeight="435.0" minWidth="593.0" prefHeight="435.0" prefWidth="593.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.ResidenceApplicationController">
+<AnchorPane minHeight="435.0" minWidth="593.0" prefHeight="531.0" prefWidth="593.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.controller.ResidenceApplicationController">
   <children>
-    <ImageView fitHeight="434.9999694824219" fitWidth="653.6884818833672" layoutX="-18.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fitHeight="530.9999694824219" fitWidth="797.9507711660308" layoutX="-35.0" layoutY="0.0" pickOnBounds="true" preserveRatio="true">
       <image>
         <Image url="@../background.jpg" />
       </image>
@@ -27,12 +27,11 @@
       </font>
     </Text>
     <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="СЕРИЯ" AnchorPane.bottomAnchor="425.36" AnchorPane.leftAnchor="52.3" AnchorPane.rightAnchor="484.63" AnchorPane.topAnchor="116.24" />
-    <TextField fx:id="series" prefWidth="156.0" AnchorPane.bottomAnchor="300.36" AnchorPane.leftAnchor="129.3" AnchorPane.rightAnchor="307.7" AnchorPane.topAnchor="112.64" />
+    <TextField fx:id="series" layoutX="129.3" layoutY="112.64" prefWidth="156.0" />
     <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="НОМЕР" AnchorPane.bottomAnchor="385.36" AnchorPane.leftAnchor="52.3" AnchorPane.rightAnchor="482.03" AnchorPane.topAnchor="156.24" />
-    <TextField fx:id="number" prefWidth="156.0" AnchorPane.bottomAnchor="260.28" AnchorPane.leftAnchor="129.3" AnchorPane.rightAnchor="307.7" AnchorPane.topAnchor="152.72" />
-    <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="АДРЕС ДЛЯ ПРОПИСКИ" AnchorPane.bottomAnchor="324.36" AnchorPane.leftAnchor="52.3" AnchorPane.rightAnchor="351.05" AnchorPane.topAnchor="217.24" />
-    <TextField fx:id="address" prefWidth="491.00000000000006" AnchorPane.bottomAnchor="159.28" AnchorPane.leftAnchor="52.3" AnchorPane.rightAnchor="48.7" AnchorPane.topAnchor="253.72" />
-    <ComboBox fx:id="typeOfResidence" prefHeight="22.99804687499997" prefWidth="144.0" promptText="не выбран" AnchorPane.bottomAnchor="114.28" AnchorPane.rightAnchor="240.0" AnchorPane.topAnchor="297.72">
+    <TextField fx:id="number" layoutX="129.3" layoutY="152.72" prefWidth="156.0" />
+    <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="Адрес для прописки" textAlignment="CENTER" AnchorPane.bottomAnchor="324.1" AnchorPane.leftAnchor="214.59" AnchorPane.rightAnchor="188.76" AnchorPane.topAnchor="217.5" />
+    <ComboBox fx:id="typeOfResidence" layoutX="213.0" layoutY="385.0" prefHeight="22.99999999999997" prefWidth="144.0" promptText="не выбран">
       <items>
         <FXCollections fx:factory="observableArrayList">
           <String fx:value="постоянная" />
@@ -40,12 +39,20 @@
         </FXCollections>
       </items>
     </ComboBox>
-    <Button fx:id="cancel" minHeight="22.999900000002526" mnemonicParsing="false" onAction="#closeStage" prefHeight="33.0" prefWidth="104.0" text="Отмена" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="303.3" AnchorPane.rightAnchor="185.7" AnchorPane.topAnchor="369.0">
+    <Button fx:id="cancel" layoutX="308.0" layoutY="457.0" minHeight="22.999900000002526" mnemonicParsing="false" onAction="#closeStage" prefHeight="33.0" prefWidth="104.0" text="Отмена">
       <font>
         <Font size="16.0" fx:id="x2" />
       </font>
     </Button>
-    <Button id="btnRegistrationResidence" fx:id="send" font="$x2" mnemonicParsing="false" onAction="#parseResidenceApplicationData" prefHeight="33.0" prefWidth="103.99999999999999" text="Отправить" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="440.3" AnchorPane.rightAnchor="48.7" AnchorPane.topAnchor="369.0" />
-    <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="ТИП ПРОПИСКИ" AnchorPane.bottomAnchor="242.36" AnchorPane.leftAnchor="52.3" AnchorPane.rightAnchor="412.93" AnchorPane.topAnchor="299.24" />
+    <Button id="btnRegistrationResidence" fx:id="send" font="$x2" layoutX="445.0" layoutY="457.0" mnemonicParsing="false" onAction="#parseResidenceApplicationData" prefHeight="33.0" prefWidth="103.99999999999999" text="Отправить" />
+    <Text font="$x1" strokeType="OUTSIDE" strokeWidth="0.0" text="ТИП ПРОПИСКИ" AnchorPane.bottomAnchor="154.58" AnchorPane.leftAnchor="56.6" AnchorPane.rightAnchor="408.63" AnchorPane.topAnchor="387.02" />
+    <Text font="$x1" layoutX="52.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ГОРОД" />
+    <Text font="$x1" layoutX="52.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="УЛИЦА" />
+    <Text font="$x1" layoutX="52.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ДОМ" />
+    <Text font="$x1" layoutX="285.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="КВАРТИРА" />
+    <TextField fx:id="city" layoutX="129.0" layoutY="250.0" prefWidth="201.0" />
+    <TextField fx:id="street" layoutX="129.0" layoutY="285.0" prefWidth="201.0" />
+    <TextField fx:id="house" layoutX="129.0" layoutY="320.0" prefWidth="87.125" />
+    <TextField fx:id="apartment" layoutX="392.0" layoutY="322.0" prefWidth="104.0" />
   </children>
 </AnchorPane>

@@ -21,7 +21,16 @@ public class ResidenceApplicationController extends PassportServiceController {
     private TextField number;
 
     @FXML
-    private TextField address;
+    private TextField city;
+
+    @FXML
+    private TextField street;
+
+    @FXML
+    private TextField house;
+
+    @FXML
+    private TextField apartment;
 
     @FXML
     private ComboBox<String> typeOfResidence;
@@ -44,16 +53,28 @@ public class ResidenceApplicationController extends PassportServiceController {
             } else if (typeOfResidence.getValue().equals("временная")) {
                 typeOfResidenceLocal = TypeOfResidence.temporary;
             }
-            if (address.getText().equals("")) {
-                notificate("Поле АДРЕС не может быть пустым!", NotificationType.ERROR);
+            if (city.getText().equals("")) {
+                notificate("Поле ГОРОД не может быть пустым!", NotificationType.ERROR);
                 return;
-            }else{
-                residenceApplication = new ResidenceApplication(passportId, typeOfResidenceLocal, address.getText());
-                MySQLDataBase.insertDataInResidenceApplication(residenceApplication);
-                notificate("Заявление успешно отправлено!", NotificationType.SUCCESS);
+            } else if (street.getText().equals("")) {
+                notificate("Поле УЛИЦА не может быть пустым!", NotificationType.ERROR);
+                return;
+            } else if (house.getText().equals("")) {
+                notificate("Поле ДОМ не может быть пустым!", NotificationType.ERROR);
+                return;
             }
+            Address address;
+            if(!apartment.getText().equals("")){
+                address = new Address(city.getText(), street.getText(), house.getText(), apartment.getText());
+            }else{
+                address = new Address(city.getText(), street.getText(), house.getText());
+            }
+            residenceApplication = new ResidenceApplication(passportId, typeOfResidenceLocal, address);
+            MySQLDataBase.insertDataInResidenceApplication(residenceApplication);
+            notificate("Заявление успешно отправлено!", NotificationType.SUCCESS);
         }
     }
+
 
     public void closeStage(ActionEvent event) {
         Stage stage = (Stage) cancel.getScene().getWindow();
